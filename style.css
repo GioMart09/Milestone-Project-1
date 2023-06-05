@@ -1,4 +1,26 @@
+#grid{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+div{
+
+}
+
+.box{
+    border-color: black;
+    border: 2px solid;
+}
+
+
 body{
     background-color: rgb(52, 154, 163);
     text-align: center;
+}
+
+h1{
+    color: rgba(240, 70, 19, 0.873);
 }
