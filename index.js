@@ -19,6 +19,9 @@ function squareClicked(e) {
         empty[id] = nextLetter
         e.target.innerText = nextLetter
 
+        if(winConditionMet() !==false)
+            playerLetter = `${nextLetter} wins!!`
+            
         nextLetter = nextLetter == LETTER_X ? lETTER_O: LETTER_X
     }
 };
@@ -36,18 +39,25 @@ function reset() {
 };
 
 const winCondition = [
-    [0,1,2]
-    [3,4,5]
-    [6,7,8]
-    [0,4,8]
-    [2,4,6]
-    [0,3,6]
-    [1,4,7]
-    [2,5,8]
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,4,8],
+    [2,4,6],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
 ]
 
 function winConditionMet() {
-    
+    for (const win of winCondition) {
+        let [x, y, z] = win
+
+        if(empty[x] && empty[x] == empty[y] && empty[x] == empty[z]) {
+            return[x,y,z]
+        }
+    }
+    return false;
 }
 
 
