@@ -30,7 +30,7 @@ function squareClicked(e) {
         empty[id] = nextLetter
         e.target.innerText = nextLetter
 
-        if(winConditionMet() !==false){
+        if(winConditionMet() !== false){
             playerLetter.innerHTML = `${nextLetter} won!!`
         }
         
