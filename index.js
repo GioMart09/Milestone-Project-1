@@ -12,6 +12,17 @@ const beginGame = () => {
     squares.forEach(square => square.addEventListener('click', squareClicked))
 };
 
+const winCondition = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,4,8],
+    [2,4,6],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+]
+
 function squareClicked(e) {
     const id = e.target.id
 
@@ -19,9 +30,10 @@ function squareClicked(e) {
         empty[id] = nextLetter
         e.target.innerText = nextLetter
 
-        if(winConditionMet() !==false)
-            playerLetter = `${nextLetter} wins!!`
-            
+        if(winConditionMet() !==false){
+            playerLetter.innerHTML = `${nextLetter} won!!`
+        }
+        
         nextLetter = nextLetter == LETTER_X ? lETTER_O: LETTER_X
     }
 };
@@ -34,20 +46,13 @@ function reset() {
     squares.forEach( square => {
         square.innerText = ''
     })
-
+    
+    playerLetter.innerHTML = "Tic Tie Toe"
+    
     nextLetter = LETTER_X
 };
 
-const winCondition = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,4,8],
-    [2,4,6],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-]
+
 
 function winConditionMet() {
     for (const win of winCondition) {
