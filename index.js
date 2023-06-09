@@ -33,7 +33,6 @@ function squareClicked(e) {
         if(winConditionMet() !== false){
             playerLetter.innerHTML = `${nextLetter} won!!`
         }
-        
         nextLetter = nextLetter == LETTER_X ? lETTER_O: LETTER_X
     }
 };
@@ -47,7 +46,7 @@ function reset() {
         square.innerText = ''
     })
     
-    playerLetter.innerHTML = "Tic Tie Toe"
+    playerLetter.innerHTML = "Tic Tac Toe"
     
     nextLetter = LETTER_X
 };
@@ -64,8 +63,6 @@ function winConditionMet() {
     }
     return false;
 }
-
-
 
 
 beginGame();
