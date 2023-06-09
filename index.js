@@ -3,7 +3,7 @@ let playerLetter = document.getElementById('playerLetter');
 let resetBtn = document.getElementById('resetBtn');
 let squares = Array.from(document.getElementsByClassName('square'));
 
-const lETTER_O = 'O';
+const LETTER_O = 'O';
 const LETTER_X = 'X';
 let nextLetter = LETTER_X;
 let empty = Array(9).fill(null);
@@ -33,7 +33,7 @@ function squareClicked(e) {
         if(winConditionMet() !== false){
             playerLetter.innerHTML = `${nextLetter} won!!`
         }
-        nextLetter = nextLetter == LETTER_X ? lETTER_O: LETTER_X
+        nextLetter = nextLetter == LETTER_X ? LETTER_O: LETTER_X
     }
 };
 
